@@ -33,17 +33,23 @@ function playRound(humanChoice, computerChoice) {
         humanChoice === "scissors" && computerChoice === "scissors") {
         alert("It's a tie! You both chose same.")
     } else if (humanChoice === "rock" && computerChoice === "paper") {
-    alert("You lose! Paper beats Rock.")
+        alert("You lose! Paper beats Rock.")
+        computerScore++
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
-    alert("You win! Rock beats Scissors.")
+        alert("You win! Rock beats Scissors.")
+        humanScore++
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-    alert("You win! Paper beats Rock.")
+        alert("You win! Paper beats Rock.")
+        humanScore++
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-    alert("You lose! Scissors beats Paper.")
+        alert("You lose! Scissors beats Paper.")
+        computerScore++
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-    alert("You lose! Rock beats Scissors.")
+        alert("You lose! Rock beats Scissors.")
+        computerScore++
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-    alert("You win! Scissors beats Paper.")
+        alert("You win! Scissors beats Paper.")
+        humanScore++
     } 
 }
 
@@ -54,3 +60,5 @@ const computerSelection = getComputerChoice(choices)
 // console.log(computerSelection)
 
 playRound(humanSelection, computerSelection)
+console.log(humanScore)
+console.log(computerScore)
