@@ -81,11 +81,11 @@ function playGame() {
     
     // Announce the winner.
     if (humanScore === computerScore) {
-        alert(`Scores: ${humanScore} - ${computerScore}. It's a draw.`);
+        alert(`Final Score: ${humanScore} - ${computerScore}. It's a draw.`);
     } else if (humanScore > computerScore) {
-        alert(`Scores: ${humanScore} - ${computerScore}. You beat the Computer.`);
+        alert(`Final Score: ${humanScore} - ${computerScore}. You beat the Computer.`);
     } else {
-        alert(`Scores: ${humanScore} - ${computerScore}. You lost to the Computer.`);
+        alert(`Final Score: ${humanScore} - ${computerScore}. You lost to the Computer.`);
     }
 }
 
