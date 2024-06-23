@@ -13,8 +13,7 @@ function getHumanChoice() {
         "Pick one from following options: rock, paper, scissors"
     );
     if (response === null) {
-        alert("You canceled the game.")
-        
+        alert("You canceled the game.");
     }
     //TODO Line below printing Type Error to console.
     response = response.toLowerCase();
@@ -61,21 +60,33 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    //TODO i is getting incremented even if response is "" or some other value.
-    for (i = 0; i < 5; i++) {
+   
+    let i = 0
+    let maxRounds = 5
+    while (i < maxRounds) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
-
-        playRound(humanSelection, computerSelection);
+        // Increment counter only if response is valid.
+        if (humanSelection === "rock" || humanSelection === "paper" || humanSelection === "scissors") {
+            i++
+            // console.log(i)
+            playRound(humanSelection, computerSelection);
+        } else {
+            i = i // Counter value doesn't change if response is invalid.
+            // console.log(i)
+            playRound(humanSelection, computerSelection);
+        }
+        
     }
-
+    
+    // Announce the winner.
     if (humanScore === computerScore) {
-        alert("The game is a tie! Scores are equal")
+        alert(`Scores: ${humanScore} - ${computerScore}. It's a draw.`);
     } else if (humanScore > computerScore) {
-        alert("You won! You beat the Computer")
+        alert(`Scores: ${humanScore} - ${computerScore}. You beat the Computer.`);
     } else {
-        alert("You lost! Computer won the game")
+        alert(`Scores: ${humanScore} - ${computerScore}. You lost to the Computer.`);
     }
 }
 
-// playGame();
+playGame();
