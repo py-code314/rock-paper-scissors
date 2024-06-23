@@ -1,6 +1,8 @@
+// Global variables.
 let humanScore = 0;
 let computerScore = 0;
 
+// Function to get computer choice.
 function getComputerChoice() {
     choiceArray = ["rock", "paper", "scissors"];
     const choice = choiceArray[Math.floor(Math.random() * choiceArray.length)];
@@ -8,14 +10,16 @@ function getComputerChoice() {
     return choice;
 }
 
+// Function to get human choice.
 function getHumanChoice() {
     let response = prompt(
         "Pick one from following options: rock, paper, scissors"
     );
     if (response === null) {
         alert("You canceled the game.");
+        // return;
     }
-    //TODO Line below printing Type Error to console.
+    
     response = response.toLowerCase();
 
     if (response === "") {
@@ -31,6 +35,7 @@ function getHumanChoice() {
     }
 }
 
+// Function to play one round of rock-paper-scissors.
 function playRound(humanChoice, computerChoice) {
     if (
         (humanChoice === "rock" && computerChoice === "rock") ||
@@ -59,33 +64,39 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+// Function to play five rounds of rock-paper-scissors.
 function playGame() {
-   
-    let i = 0
-    let maxRounds = 5
+    let i = 0;
+    let maxRounds = 5;
     while (i < maxRounds) {
         const humanSelection = getHumanChoice();
+        console.log(humanSelection)
         const computerSelection = getComputerChoice();
         // Increment counter only if response is valid.
-        if (humanSelection === "rock" || humanSelection === "paper" || humanSelection === "scissors") {
-            i++
-            // console.log(i)
+        if (
+            humanSelection === "rock" ||
+            humanSelection === "paper" ||
+            humanSelection === "scissors"
+        ) {
+            i++;
             playRound(humanSelection, computerSelection);
         } else {
-            i = i // Counter value doesn't change if response is invalid.
-            // console.log(i)
+            i = i; // Counter value doesn't change if response is invalid.
             playRound(humanSelection, computerSelection);
         }
-        
     }
-    
+
     // Announce the winner.
     if (humanScore === computerScore) {
         alert(`Final Score: ${humanScore} - ${computerScore}. It's a draw.`);
     } else if (humanScore > computerScore) {
-        alert(`Final Score: ${humanScore} - ${computerScore}. You beat the Computer.`);
+        alert(
+            `Final Score: ${humanScore} - ${computerScore}. You beat the Computer.`
+        );
     } else {
-        alert(`Final Score: ${humanScore} - ${computerScore}. You lost to the Computer.`);
+        alert(
+            `Final Score: ${humanScore} - ${computerScore}. You lost to the Computer.`
+        );
     }
 }
 
