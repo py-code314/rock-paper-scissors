@@ -6,7 +6,6 @@ let computerScore = 0;
 function getComputerChoice() {
     choiceArray = ["rock", "paper", "scissors"];
     const choice = choiceArray[Math.floor(Math.random() * choiceArray.length)];
-    // console.log(choice)
     return choice;
 }
 
@@ -17,7 +16,6 @@ function getHumanChoice() {
     );
     if (response === null) {
         alert("You canceled the game.");
-        // return;
     }
     
     response = response.toLowerCase();
@@ -70,7 +68,6 @@ function playGame() {
     let maxRounds = 5;
     while (i < maxRounds) {
         const humanSelection = getHumanChoice();
-        console.log(humanSelection)
         const computerSelection = getComputerChoice();
         // Increment counter only if response is valid.
         if (
