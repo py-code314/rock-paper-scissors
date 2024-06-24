@@ -41,25 +41,21 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === "scissors" && computerChoice === "scissors")
     ) {
         alert("It's a tie! You both chose same.");
-    } else if (humanChoice === "rock" && computerChoice === "paper") {
-        alert("You lose! Paper beats Rock.");
+    } else if (
+        (humanChoice === "rock" && computerChoice === "paper") ||
+        (humanChoice === "paper" && computerChoice === "scissors") ||
+        (humanChoice === "scissors" && computerChoice === "rock")
+    ) {
+        alert(`You lose! ${computerChoice} beats ${humanChoice}.`);
         computerScore++;
-    } else if (humanChoice === "rock" && computerChoice === "scissors") {
-        alert("You win! Rock beats Scissors.");
+    } else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        alert(`You win! ${humanChoice} beats ${computerChoice}.`);
         humanScore++;
-    } else if (humanChoice === "paper" && computerChoice === "rock") {
-        alert("You win! Paper beats Rock.");
-        humanScore++;
-    } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        alert("You lose! Scissors beats Paper.");
-        computerScore++;
-    } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        alert("You lose! Rock beats Scissors.");
-        computerScore++;
-    } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        alert("You win! Scissors beats Paper.");
-        humanScore++;
-    }
+    } 
 }
 
 // Function to play five rounds of rock-paper-scissors.
