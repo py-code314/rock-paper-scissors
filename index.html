@@ -1,38 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="./main.js" defer></script>
-</head>
-<body>
-    <!--Title-->
-    <h1 id="title">Rock Paper Scissors</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="./main.js" defer></script>
+    </head>
+    <body>
+        <!--Title-->
+        <h1 id="title">Rock Paper Scissors</h1>
 
-    <!--Section for cards-->
-    <section class="cards">
-        <div class="player-cards"></div>
-        <div class="computer-cards"></div>
-    </section>
+        <!--Section for cards-->
+        <section class="cards">
+            <div class="player-cards">
+                <div><h2 class="section-title">Player</h2></div>
+                <div class="buttons">
+                    <div class="btn-image">
+                        <button type="submit">
+                            <img src="./images/rock.jpg" alt="Rock" />
+                        </button>
+                        <h3 class="image-title">Rock</h3>
+                    </div>
+                    <div class="btn-image">
+                        <button type="submit">
+                            <img src="./images/paper.jpg" alt="Paper" />
+                        </button>
+                        <h3 class="image-title">Paper</h3>
+                    </div>
+                    <div class="btn-image">
+                        <button type="submit">
+                            <img src="./images/scissors.jpg" alt="Scissors" />
+                        </button>
+                        <h3 class="image-title">Scissors</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="computer-cards">
+                <div><h2 class="section-title">Computer</h2></div>
+                <div class="images">
+                    <div class="image">
+                        <img src="./images/rock.jpg" alt="Rock" />
 
-    <!--Section to show current round-->
-    <section class="play">
-        <div class="player"></div>
-        <div class="versus"></div>
-        <div class="computer"></div>
-    </section>
+                        <h3 class="image-title">Rock</h3>
+                    </div>
+                    <div class="image">
+                        <img src="./images/paper.jpg" alt="Paper" />
 
-    <!--Scores section-->
-    <section class="score">
-        <div class="scores"></div>
-    </section>
+                        <h3 class="image-title">Paper</h3>
+                    </div>
+                    <div class="image">
+                        <img src="./images/scissors.jpg" alt="Scissors" />
 
-    <!--Announcement section-->
-    <section class="winner">
-        <div class="display"></div>
-    </section>
+                        <h3 class="image-title">Scissors</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</body>
+        <!--Section to show current round-->
+        <section class="play">
+            <div class="player"></div>
+            <div class="versus"></div>
+            <div class="computer"></div>
+        </section>
+
+        <!--Scores section-->
+        <section class="score">
+            <div class="scores"></div>
+        </section>
+
+        <!--Announcement section-->
+        <section class="winner">
+            <div class="display"></div>
+        </section>
+    </body>
 </html>
