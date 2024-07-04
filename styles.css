@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style title */
+#title {
+    text-align: center;
+    color: red;
+    font-family: "Bungee Spice", sans-serif;
+}
+
+/* Style cards section */
+.cards {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.player-cards {
+    border: 2px solid black;
+    width: 500px;
+    height: 200px;
+}
+
+.computer-cards {
+    border: 2px solid black;
+    width: 500px;
+    height: 200px;
+}
+
+/* Style play section */
+.play {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.player, .computer{
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+}
+
+.versus {
+    border: 2px solid black;
+    width: 200px;
+    height: 400px;
+}
+
+/* Style score section */
+.score {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.scores {
+    border: 2px solid black;
+    width: 600px;
+    height: 150px;
+}
+
+/* Style winner section */
+.winner {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.display {
+    border: 2px solid black;
+    width: 600px;
+    height: 150px;
+}
