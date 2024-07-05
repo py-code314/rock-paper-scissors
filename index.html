@@ -12,43 +12,43 @@
         <h1 id="page-title">Rock Paper Scissors</h1>
 
         <!--Section for cards-->
-        <section class="cards">
-            <div class="player-cards">
-                <div><h2 class="box-title">Player</h2></div>
+        <section class="choices">
+            <div class="player-choices">
+                <div><h2 class="subsection-title">Player</h2></div>
                 <div class="buttons">
-                    <div class="btn-image">
-                        <button type="submit">
-                            <img src="./images/rock.jpg" alt="Rock" />
+                    <div class="player-choice">
+                        <button class="btn" type="submit" value="rock">
+                            <img class="image" id="rock" src="./images/rock.jpg" alt="Rock" />
                         </button>
                         <h3 class="image-title">Rock</h3>
                     </div>
-                    <div class="btn-image">
-                        <button type="submit">
-                            <img src="./images/paper.jpg" alt="Paper" />
+                    <div class="player-choice">
+                        <button class="btn" type="submit" value="paper">
+                            <img class="image" id="paper" src="./images/paper.jpg" alt="Paper" />
                         </button>
                         <h3 class="image-title">Paper</h3>
                     </div>
-                    <div class="btn-image">
-                        <button type="submit">
-                            <img src="./images/scissors.jpg" alt="Scissors" />
+                    <div class="player-choice">
+                        <button class="btn" type="submit" value="scissors">
+                            <img class="image" id="scissors" src="./images/scissors.jpg" alt="Scissors" />
                         </button>
                         <h3 class="image-title">Scissors</h3>
                     </div>
                 </div>
             </div>
-            <div class="computer-cards">
-                <div><h2 class="box-title">Computer</h2></div>
+            <div class="computer-choices">
+                <div><h2 class="subsection-title">Computer</h2></div>
                 <div class="images">
-                    <div class="image">
-                        <img src="./images/rock.jpg" alt="Rock" />
+                    <div class="computer-choice">
+                        <img class="image" src="./images/rock.jpg" alt="Rock" />
                         <h3 class="image-title">Rock</h3>
                     </div>
-                    <div class="image">
-                        <img src="./images/paper.jpg" alt="Paper" />
+                    <div class="computer-choice">
+                        <img class="image" src="./images/paper.jpg" alt="Paper" />
                         <h3 class="image-title">Paper</h3>
                     </div>
-                    <div class="image">
-                        <img src="./images/scissors.jpg" alt="Scissors" />
+                    <div class="computer-choice">
+                        <img class="image" src="./images/scissors.jpg" alt="Scissors" />
                         <h3 class="image-title">Scissors</h3>
                     </div>
                 </div>
@@ -56,18 +56,18 @@
         </section>
 
         <!--Section to show current round-->
-        <section class="play">
+        <section class="current-round">
             <div class="player-pick"></div>
-            <div class="versus box-title">VS</div>
+            <div class="versus subsection-title">VS</div>
             <div class="computer-pick"></div>
         </section>
 
         <!--Scores section-->
         <section class="score">
-            <h2 class="box-title">score</h2>
+            <h2 class="subsection-title">score</h2>
             <div class="points">
-                <h3 class="player-points box-title">Player:</h3>
-                <h3 class="computer-points box-title">:Computer</h3>
+                <h3 class="player-points subsection-title">Player:</h3>
+                <h3 class="computer-points subsection-title">:Computer</h3>
             </div>
         </section>
 
@@ -75,5 +75,7 @@
         <section class="winner">
             
         </section>
+
+        
     </body>
 </html>
