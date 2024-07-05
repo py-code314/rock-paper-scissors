@@ -10,54 +10,96 @@ function getComputerChoice() {
 }
 
 // Function to get human choice.
-function getHumanChoice() {
-    // let response = prompt(
-    //     "Pick one from following options: rock, paper, scissors"
-    // );
-    // if (response === null) {
-    //     alert("You canceled the game.");
-    // }
-    
-    // response = response.toLowerCase();
+function getHumanChoice(event) {
+    let response = "";
+    // Get the button image user clicked by using bubbling event.
+    let target = event.target;
 
-    // if (response === "") {
-    //     alert("Field can not be left blank.");
-    // } else if (
-    //     response === "rock" ||
-    //     response === "paper" ||
-    //     response === "scissors"
-    // ) {
-    //     return response;
-    // } else {
-    //     alert("Enter a valid response");
-    // }
-    let response;
-    const buttons = document.querySelector(".buttons")
-    // console.log(btn)
-    buttons.addEventListener('click', (event) => {
-        // e.preventDefault()
-        // const value = btn.value
-        // console.log(e)
-        let target = event.target
-        console.log(target.id)
-
-        switch (target.id) {
-            case "rock":
-                response = "rock";
-                break;
-            case "paper":
-                response = "paper";
-                break;
-            case "scissors":
-                response = "scissors"
-                break;
-        }
-    })
-    console.log(response)
-    return response
+    switch (target.id) {
+        case "rock":
+            response = "rock";
+            break;
+        case "paper":
+            response = "paper";
+            break;
+        case "scissors":
+            response = "scissors";
+            break;
+    }
+    return response;
 }
 
-getHumanChoice()
+const buttons = document.querySelector(".buttons");
+buttons.addEventListener("click", displayComputerChoice);
+buttons.addEventListener("click", displayHumanChoice);
+
+// Function to display computer pick after user makes choice.
+function displayComputerChoice() {
+    const computerChoice = getComputerChoice();
+
+    if (computerChoice === "rock") {
+        const computerPick = document.querySelector(".computer-pick");
+        // Create image element and append it to the div.
+        const image = document.createElement("img");
+        image.className = "image";
+        image.setAttribute("src", "./images/rock.jpg");
+        image.setAttribute("alt", "Rock");
+
+        computerPick.appendChild(image);
+    } else if (computerChoice === "paper") {
+        const computerPick = document.querySelector(".computer-pick");
+
+        const image = document.createElement("img");
+        image.className = "image";
+        image.setAttribute("src", "./images/paper.jpg");
+        image.setAttribute("alt", "Paper");
+
+        computerPick.appendChild(image);
+    } else {
+        const computerPick = document.querySelector(".computer-pick");
+
+        const image = document.createElement("img");
+        image.className = "image";
+        image.setAttribute("src", "./images/scissors.jpg");
+        image.setAttribute("alt", "Scissors");
+
+        computerPick.appendChild(image);
+    }
+}
+
+// Function to display human pick after user makes choice.
+function displayHumanChoice(event) {
+    const humanChoice = getHumanChoice(event);
+
+    if (humanChoice === "rock") {
+        const humanPick = document.querySelector(".player-pick");
+
+        const image = document.createElement("img");
+        image.className = "image";
+        image.setAttribute("src", "./images/rock.jpg");
+        image.setAttribute("alt", "Rock");
+
+        humanPick.appendChild(image);
+    } else if (humanChoice === "paper") {
+        const humanPick = document.querySelector(".player-pick");
+
+        const image = document.createElement("img");
+        image.className = "image";
+        image.setAttribute("src", "./images/paper.jpg");
+        image.setAttribute("alt", "Paper");
+
+        humanPick.appendChild(image);
+    } else {
+        const humanPick = document.querySelector(".player-pick");
+
+        const image = document.createElement("img");
+        image.className = "image";
+        image.setAttribute("src", "./images/scissors.jpg");
+        image.setAttribute("alt", "Scissors");
+
+        humanPick.appendChild(image);
+    }
+}
 
 // Function to play one round of rock-paper-scissors.
 function playRound(humanChoice, computerChoice) {
@@ -81,8 +123,7 @@ function playRound(humanChoice, computerChoice) {
     ) {
         alert(`You win! ${humanChoice} beats ${computerChoice}.`);
         humanScore++;
-    } 
-    
+    }
 }
 
 // Function to play five rounds of rock-paper-scissors.
