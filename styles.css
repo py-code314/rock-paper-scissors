@@ -18,7 +18,7 @@
     font-size: 3.5rem;
 }
 
-.box-title {
+.subsection-title {
     text-align: center;
     font-family: "Bungee Spice", sans-serif;
     font-size: 2rem;
@@ -29,19 +29,19 @@
 }
 
 /* Style cards section */
-.cards {
+.choices {
     border: 2px solid black;
     display: flex;
     justify-content: space-around;
 }
 
-.player-cards {
+.player-choices {
     border: 2px solid black;
     width: 500px;
     height: 200px;
 }
 
-.computer-cards {
+.computer-choices {
     border: 2px solid black;
     width: 500px;
     height: 200px;
@@ -53,7 +53,7 @@
     align-items: center;
 }
 
-.btn-image button {
+.player-choice button {
     border: none;
     cursor: pointer;
     width: 100px;
@@ -61,34 +61,30 @@
 }
 
 
-
-.btn-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.image {
+.computer-choice {
     width: 100px;
     height: 100px;
 }
-.image img {
+.image {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
 /* Style play section */
-.play {
+.current-round {
     border: 2px solid black;
     display: flex;
     justify-content: center;
 }
 
-.player, .computer{
+.player-pick, .computer-pick{
     border: 2px solid black;
     width: 400px;
     height: 400px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 .versus {
