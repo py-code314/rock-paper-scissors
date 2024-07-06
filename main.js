@@ -30,12 +30,15 @@ function getHumanChoice(event) {
 }
 
 const buttons = document.querySelector(".buttons");
-buttons.addEventListener("click", displayComputerChoice);
+// buttons.addEventListener("click", displayComputerChoice);
 buttons.addEventListener("click", displayHumanChoice);
+buttons.addEventListener("click", playRound);
+
 
 // Function to display computer pick after user makes choice.
 function displayComputerChoice() {
     const computerChoice = getComputerChoice();
+    console.log(computerChoice)
 
     if (computerChoice === "rock") {
         const computerPick = document.querySelector(".computer-pick");
@@ -65,6 +68,7 @@ function displayComputerChoice() {
 
         computerPick.appendChild(image);
     }
+    return computerChoice
 }
 
 // Function to display human pick after user makes choice.
@@ -102,27 +106,41 @@ function displayHumanChoice(event) {
 }
 
 // Function to play one round of rock-paper-scissors.
-function playRound(humanChoice, computerChoice) {
+function playRound(event) {
+    const humanChoice = getHumanChoice(event)
+    const computerChoice = displayComputerChoice()
+    // console.log(humanChoice)
+    // console.log(computerChoice)
+
+    let humanScore = 0
+    let computerScore = 0
+
+    const playerPoints = document.querySelector(".player-points"); 
+    const computerPoints = document.querySelector(".computer-points");
+    
     if (
         (humanChoice === "rock" && computerChoice === "rock") ||
         (humanChoice === "paper" && computerChoice === "paper") ||
         (humanChoice === "scissors" && computerChoice === "scissors")
     ) {
-        alert("It's a tie! You both chose same.");
+        playerPoints.textContent = humanScore
+        computerPoints.textContent = computerScore
     } else if (
         (humanChoice === "rock" && computerChoice === "paper") ||
         (humanChoice === "paper" && computerChoice === "scissors") ||
         (humanChoice === "scissors" && computerChoice === "rock")
     ) {
-        alert(`You lose! ${computerChoice} beats ${humanChoice}.`);
         computerScore++;
+        playerPoints.textContent = humanScore;
+        computerPoints.textContent = computerScore;
     } else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-        alert(`You win! ${humanChoice} beats ${computerChoice}.`);
         humanScore++;
+        playerPoints.textContent = humanScore;
+        computerPoints.textContent = computerScore;
     }
 }
 
