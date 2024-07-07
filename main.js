@@ -32,13 +32,12 @@ function getHumanChoice(event) {
 const buttons = document.querySelector(".buttons");
 // buttons.addEventListener("click", displayComputerChoice);
 buttons.addEventListener("click", displayHumanChoice);
-buttons.addEventListener("click", playRound);
-
+buttons.addEventListener("click", playGame);
 
 // Function to display computer pick after user makes choice.
 function displayComputerChoice() {
     const computerChoice = getComputerChoice();
-    console.log(computerChoice)
+    console.log(computerChoice);
 
     if (computerChoice === "rock") {
         const computerPick = document.querySelector(".computer-pick");
@@ -68,7 +67,7 @@ function displayComputerChoice() {
 
         computerPick.appendChild(image);
     }
-    return computerChoice
+    return computerChoice;
 }
 
 // Function to display human pick after user makes choice.
@@ -107,24 +106,24 @@ function displayHumanChoice(event) {
 
 // Function to play one round of rock-paper-scissors.
 function playRound(event) {
-    const humanChoice = getHumanChoice(event)
-    const computerChoice = displayComputerChoice()
-    // console.log(humanChoice)
-    // console.log(computerChoice)
+    const humanChoice = getHumanChoice(event);
+    const computerChoice = displayComputerChoice();
+    console.log(humanChoice)
+    console.log(computerChoice)
 
-    let humanScore = 0
-    let computerScore = 0
+    // let humanScore = 0;
+    // let computerScore = 0;
 
-    const playerPoints = document.querySelector(".player-points"); 
+    const playerPoints = document.querySelector(".player-points");
     const computerPoints = document.querySelector(".computer-points");
-    
+
     if (
         (humanChoice === "rock" && computerChoice === "rock") ||
         (humanChoice === "paper" && computerChoice === "paper") ||
         (humanChoice === "scissors" && computerChoice === "scissors")
     ) {
-        playerPoints.textContent = humanScore
-        computerPoints.textContent = computerScore
+        playerPoints.textContent = humanScore;
+        computerPoints.textContent = computerScore;
     } else if (
         (humanChoice === "rock" && computerChoice === "paper") ||
         (humanChoice === "paper" && computerChoice === "scissors") ||
@@ -145,38 +144,18 @@ function playRound(event) {
 }
 
 // Function to play five rounds of rock-paper-scissors.
-/*function playGame() {
-    let i = 0;
-    let maxRounds = 5;
-    while (i < maxRounds) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        // Increment counter only if response is valid.
-        if (
-            humanSelection === "rock" ||
-            humanSelection === "paper" ||
-            humanSelection === "scissors"
-        ) {
-            i++;
-            playRound(humanSelection, computerSelection);
-        } else {
-            i = i; // Counter value doesn't change if response is invalid.
-            playRound(humanSelection, computerSelection);
-        }
-    }
+function playGame(event) {
+    
+    playRound(event)
+    const winner = document.querySelector(".winner");
 
-    // Announce the winner.
-    if (humanScore === computerScore) {
-        alert(`Final Score: You ${humanScore} - ${computerScore} Computer. It's a draw.`);
-    } else if (humanScore > computerScore) {
-        alert(
-            `Final Score: You ${humanScore} - ${computerScore} Computer. You beat the Computer.`
-        );
-    } else {
-        alert(
-            `Final Score: You ${humanScore} - ${computerScore} Computer. You lost to the Computer.`
-        );
+    if (humanScore === 5) {
+        
+        winner.textContent = "You Won!"
+    } else if (computerScore === 5) {
+        winner.textContent = "Computer Won!"
     }
+    // console.log(winner.textContent)
 }
 
-playGame();*/
+// playGame();
