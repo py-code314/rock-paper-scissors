@@ -36,67 +36,80 @@ buttons.addEventListener("click", playGame);
 
 // Function to display computer pick after user makes choice.
 function displayComputerChoice() {
-    const computerChoice = getComputerChoice();
-    console.log(computerChoice);
+    
+    const currentImage = document.getElementById("computer-pick");
+    if (currentImage !== null) {
+        currentImage.remove()
+    }
 
+    
+    const computerPick = document.querySelector(".computer-pick");
+    const image = document.createElement("img");
+    image.className = "image";
+    image.id = "computer-pick"
+    
+    const computerChoice = getComputerChoice();
+    
     if (computerChoice === "rock") {
-        const computerPick = document.querySelector(".computer-pick");
-        // Create image element and append it to the div.
-        const image = document.createElement("img");
-        image.className = "image";
+        
+        // const image = document.createElement("img");
+        // image.className = "image";
+        
         image.setAttribute("src", "./images/rock.jpg");
         image.setAttribute("alt", "Rock");
 
         computerPick.appendChild(image);
     } else if (computerChoice === "paper") {
-        const computerPick = document.querySelector(".computer-pick");
+        
 
-        const image = document.createElement("img");
-        image.className = "image";
+        // const image = document.createElement("img");
+        // image.className = "image";
         image.setAttribute("src", "./images/paper.jpg");
         image.setAttribute("alt", "Paper");
 
         computerPick.appendChild(image);
     } else {
-        const computerPick = document.querySelector(".computer-pick");
+        
 
-        const image = document.createElement("img");
-        image.className = "image";
+        // const image = document.createElement("img");
+        // image.className = "image";
         image.setAttribute("src", "./images/scissors.jpg");
         image.setAttribute("alt", "Scissors");
 
         computerPick.appendChild(image);
     }
+    // computerPick.removeChild(image);
     return computerChoice;
 }
 
 // Function to display human pick after user makes choice.
 function displayHumanChoice(event) {
+    const currentImage = document.getElementById("player-pick");
+    if (currentImage !== null) {
+        currentImage.remove();
+    }
+
+    const humanPick = document.querySelector(".player-pick");
+    const image = document.createElement("img");
+    image.className = "image";
+    image.id = "player-pick"
+
     const humanChoice = getHumanChoice(event);
 
     if (humanChoice === "rock") {
-        const humanPick = document.querySelector(".player-pick");
-
-        const image = document.createElement("img");
-        image.className = "image";
+    
         image.setAttribute("src", "./images/rock.jpg");
         image.setAttribute("alt", "Rock");
 
         humanPick.appendChild(image);
     } else if (humanChoice === "paper") {
-        const humanPick = document.querySelector(".player-pick");
-
-        const image = document.createElement("img");
-        image.className = "image";
+        
         image.setAttribute("src", "./images/paper.jpg");
         image.setAttribute("alt", "Paper");
 
         humanPick.appendChild(image);
     } else {
-        const humanPick = document.querySelector(".player-pick");
-
-        const image = document.createElement("img");
-        image.className = "image";
+        
         image.setAttribute("src", "./images/scissors.jpg");
         image.setAttribute("alt", "Scissors");
 
@@ -152,10 +165,18 @@ function playGame(event) {
     if (humanScore === 5) {
         
         winner.textContent = "You Won!"
+        humanScore = 0
+        computerScore = 0
     } else if (computerScore === 5) {
-        winner.textContent = "Computer Won!"
+        winner.textContent = "You Lost!"
+        humanScore = 0
+        computerScore = 0
     }
     // console.log(winner.textContent)
+}
+
+function newGame() {
+
 }
 
 // playGame();
