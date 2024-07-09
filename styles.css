@@ -12,7 +12,7 @@
 }
 
 /* Style title */
-#page-title {
+.page-title {
     text-align: center;
     font-family: "Honk", system-ui;
     font-size: 3.5rem;
@@ -80,8 +80,8 @@
 
 .player-pick, .computer-pick{
     border: 2px solid black;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -90,7 +90,7 @@
 .versus {
     border: 2px solid black;
     width: 200px;
-    height: 400px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +111,7 @@
 .points {
     border: 2px solid black;
     width: 600px;
-    height: 150px;
+    height: 70px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -124,7 +124,28 @@
     /* display: flex;
     justify-content: center; */
     width: 600px;
-    height: 150px;
-    margin: auto;
+    height: 70px;
+    margin: 0 auto;
+}
+
+/* Style new game section */
+.new-game {
+    /* font-family: "Bungee Spice", sans-serif; */
+    width: 600px;
+    height: 70px;
+    border: 2px solid black;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.btn-newgame {
+    font-family: "Bungee Spice", sans-serif;
+    font-size: 1.7rem;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
