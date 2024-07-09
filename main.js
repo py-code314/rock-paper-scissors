@@ -6,6 +6,8 @@ const btnRock = document.querySelector("#btn-rock");
 const btnPaper = document.querySelector("#btn-paper");
 const btnScissors = document.querySelector("#btn-scissors");
 
+const winner = document.querySelector(".winner");
+
 // Function to get computer choice.
 function getComputerChoice() {
     choiceArray = ["rock", "paper", "scissors"];
@@ -151,10 +153,9 @@ function playRound(event) {
 function playGame(event) {
     
     playRound(event)
-    const winner = document.querySelector(".winner");
+    // const winner = document.querySelector(".winner");
 
-    // const playerPoints = document.querySelector(".player-points");
-    // const computerPoints = document.querySelector(".computer-points");
+    
 
     if (humanScore === 5) {        
         winner.textContent = "You Won!"
@@ -173,7 +174,42 @@ function playGame(event) {
     // console.log(winner.textContent)
 }
 
+const btnNewGame = document.querySelector(".btn-newgame");
+btnNewGame.addEventListener("click", newGame);
 
+function newGame() {
+    alert("Let's play!");
+
+    btnRock.disabled = false;
+    btnPaper.disabled = false;
+    btnScissors.disabled = false;
+
+    winner.textContent = "";
+
+    const playerPoints = document.querySelector(".player-points");
+    const computerPoints = document.querySelector(".computer-points");
+
+    
+
+    humanScore = 0;
+    computerScore = 0;
+
+    playerPoints.textContent = humanScore
+    computerPoints.textContent = computerScore
+
+    const currentImage = document.getElementById("computer-pick");
+    const currentImg = document.getElementById("player-pick");
+    if (currentImage !== null) {
+        currentImage.remove();
+    }
+    if (currentImg !== null) {
+        currentImg.remove()
+    }
+
+    
+    
+    
+}
 
 
 
