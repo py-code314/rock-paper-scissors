@@ -2,6 +2,10 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const btnRock = document.querySelector("#btn-rock");
+const btnPaper = document.querySelector("#btn-paper");
+const btnScissors = document.querySelector("#btn-scissors");
+
 // Function to get computer choice.
 function getComputerChoice() {
     choiceArray = ["rock", "paper", "scissors"];
@@ -41,7 +45,6 @@ function displayComputerChoice() {
     if (currentImage !== null) {
         currentImage.remove()
     }
-
     
     const computerPick = document.querySelector(".computer-pick");
     const image = document.createElement("img");
@@ -51,28 +54,16 @@ function displayComputerChoice() {
     const computerChoice = getComputerChoice();
     
     if (computerChoice === "rock") {
-        
-        // const image = document.createElement("img");
-        // image.className = "image";
-        
         image.setAttribute("src", "./images/rock.jpg");
         image.setAttribute("alt", "Rock");
 
         computerPick.appendChild(image);
     } else if (computerChoice === "paper") {
-        
-
-        // const image = document.createElement("img");
-        // image.className = "image";
         image.setAttribute("src", "./images/paper.jpg");
         image.setAttribute("alt", "Paper");
 
         computerPick.appendChild(image);
     } else {
-        
-
-        // const image = document.createElement("img");
-        // image.className = "image";
         image.setAttribute("src", "./images/scissors.jpg");
         image.setAttribute("alt", "Scissors");
 
@@ -162,21 +153,28 @@ function playGame(event) {
     playRound(event)
     const winner = document.querySelector(".winner");
 
-    if (humanScore === 5) {
-        
+    // const playerPoints = document.querySelector(".player-points");
+    // const computerPoints = document.querySelector(".computer-points");
+
+    if (humanScore === 5) {        
         winner.textContent = "You Won!"
-        humanScore = 0
-        computerScore = 0
+
+        btnRock.disabled = true
+        btnPaper.disabled = true
+        btnScissors.disabled = true
+        
     } else if (computerScore === 5) {
         winner.textContent = "You Lost!"
-        humanScore = 0
-        computerScore = 0
+
+        btnRock.disabled = true;
+        btnPaper.disabled = true;
+        btnScissors.disabled = true;
     }
     // console.log(winner.textContent)
 }
 
-function newGame() {
 
-}
+
+
 
 // playGame();
