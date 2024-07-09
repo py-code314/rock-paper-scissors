@@ -9,7 +9,11 @@
     </head>
     <body>
         <!--Title-->
-        <h1 id="page-title">Rock Paper Scissors</h1>
+        <h1 class="page-title">Rock Paper Scissors</h1>
+        <div class="new-game">
+            <h3>Click the button to start a New Game!</h3>
+            <button class="btn-newgame">New Game</button>
+        </div>
 
         <!--Section for cards-->
         <section class="choices">
@@ -17,19 +21,19 @@
                 <div><h2 class="subsection-title">Player</h2></div>
                 <div class="buttons">
                     <div class="player-choice">
-                        <button class="btn" type="submit" value="rock">
+                        <button id="btn-rock" class="btn-player" type="submit" value="rock">
                             <img class="image" id="rock" src="./images/rock.jpg" alt="Rock" />
                         </button>
                         <h3 class="image-title">Rock</h3>
                     </div>
                     <div class="player-choice">
-                        <button class="btn" type="submit" value="paper">
+                        <button id="btn-paper" class="btn-player" type="submit" value="paper">
                             <img class="image" id="paper" src="./images/paper.jpg" alt="Paper" />
                         </button>
                         <h3 class="image-title">Paper</h3>
                     </div>
                     <div class="player-choice">
-                        <button class="btn" type="submit" value="scissors">
+                        <button id="btn-scissors" class="btn-player" type="submit" value="scissors">
                             <img class="image" id="scissors" src="./images/scissors.jpg" alt="Scissors" />
                         </button>
                         <h3 class="image-title">Scissors</h3>
@@ -74,8 +78,10 @@
             </div>
         </section>
 
-        <!--Announcement section-->
-        <section class="winner">
+        <!--Winner announcement section-->
+        <section>
+            <div class="winner page-title"></div>
+            
             
         </section>
 
