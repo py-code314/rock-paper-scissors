@@ -8,52 +8,69 @@
         <script src="./main.js" defer></script>
     </head>
     <body>
-        <!--Title-->
+        <!-- Page title -->
         <h1 class="page-title">Rock Paper Scissors</h1>
+
+        <!-- Alert box -->
         <div class="new-game">
             <h3>Click the button to start a New Game!</h3>
             <button class="btn-newgame">New Game</button>
         </div>
+        <div class="overlay"></div>
+        <div class="alert-box" style="display: none;">
+            <span class="btn-close">✖︎</span>
+            <div class="alert-message">
+                <p>Rules:</p>
+                <ul class="rules">
+                    <li>– Rock beats Scissors</li>
+                    <li>– Paper beats Rock</li>
+                    <li>– Scissors beats Paper</li>
+                </ul>            
+                <p>Let's begin!</p>
+            </div>           
+        </div>
+        <hr>
 
-        <!--Section for cards-->
+        <!--Choices section-->
         <section class="choices">
+            <!--Player choices section-->
             <div class="player-choices">
-                <div><h2 class="subsection-title">Player</h2></div>
-                <div class="buttons">
+                <h2 class="heading">Player</h2>
+                <!-- Buttons for player choices-->
+                <div class="btns-player">
                     <div class="player-choice">
                         <button id="btn-rock" class="btn-player" type="submit" value="rock">
                             <img class="image" id="rock" src="./images/rock.jpg" alt="Rock" />
                         </button>
-                        <h3 class="image-title">Rock</h3>
                     </div>
                     <div class="player-choice">
                         <button id="btn-paper" class="btn-player" type="submit" value="paper">
                             <img class="image" id="paper" src="./images/paper.jpg" alt="Paper" />
                         </button>
-                        <h3 class="image-title">Paper</h3>
                     </div>
                     <div class="player-choice">
                         <button id="btn-scissors" class="btn-player" type="submit" value="scissors">
                             <img class="image" id="scissors" src="./images/scissors.jpg" alt="Scissors" />
                         </button>
-                        <h3 class="image-title">Scissors</h3>
                     </div>
                 </div>
             </div>
+
+            <div class="vertical-line"></div>
+
+            <!--Computer choices section-->
             <div class="computer-choices">
-                <div><h2 class="subsection-title">Computer</h2></div>
+                <div><h2 class="heading">Computer</h2></div>
+                <!-- Images for computer choices-->
                 <div class="images">
                     <div class="computer-choice">
                         <img class="image" src="./images/rock.jpg" alt="Rock" />
-                        <h3 class="image-title">Rock</h3>
                     </div>
                     <div class="computer-choice">
                         <img class="image" src="./images/paper.jpg" alt="Paper" />
-                        <h3 class="image-title">Paper</h3>
                     </div>
                     <div class="computer-choice">
-                        <img class="image" src="./images/scissors.jpg" alt="Scissors" />
-                        <h3 class="image-title">Scissors</h3>
+                        <img class="image" src="./images/scissors.jpg" alt="Scissors" />           
                     </div>
                 </div>
             </div>
@@ -62,29 +79,26 @@
         <!--Section to show current round-->
         <section class="current-round">
             <div class="player-pick"></div>
-            <div class="versus subsection-title">VS</div>
+            <div class="versus heading">VS</div>
             <div class="computer-pick"></div>
         </section>
 
-        <!--Scores section-->
+        <!--Score section-->
         <section class="score">
-            <h2 class="subsection-title">score</h2>
+            <h2 class="heading">score</h2>
             <div class="points">
-                <h3 class="subsection-title">Player:</h3>
+                <h3 class="heading">Player:</h3>
                 <h3 class="player-points"></h3>
                 <h3>—</h3>
                 <h3 class="computer-points"></h3>
-                <h3 class="subsection-title">:Computer</h3>
+                <h3 class="heading">:Computer</h3>
             </div>
         </section>
+        <hr>
 
         <!--Winner announcement section-->
         <section>
-            <div class="winner page-title"></div>
-            
-            
-        </section>
-
-        
+            <div class="winner page-title"></div>           
+        </section>        
     </body>
 </html>
