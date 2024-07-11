@@ -35,7 +35,7 @@ function getHumanChoice(event) {
     return response;
 }
 
-const buttons = document.querySelector(".buttons");
+const buttons = document.querySelector(".btns-player");
 // buttons.addEventListener("click", displayComputerChoice);
 buttons.addEventListener("click", displayHumanChoice);
 buttons.addEventListener("click", playGame);
@@ -93,6 +93,7 @@ function displayHumanChoice(event) {
     
         image.setAttribute("src", "./images/rock.jpg");
         image.setAttribute("alt", "Rock");
+        
 
         humanPick.appendChild(image);
     } else if (humanChoice === "paper") {
@@ -161,15 +162,21 @@ function playGame(event) {
         winner.textContent = "You Won!"
 
         btnRock.disabled = true
+        btnRock.style.cursor = "not-allowed"
         btnPaper.disabled = true
+        btnPaper.style.cursor = "not-allowed";
         btnScissors.disabled = true
+        btnScissors.style.cursor = "not-allowed";
         
     } else if (computerScore === 5) {
         winner.textContent = "You Lost!"
 
         btnRock.disabled = true;
+        btnRock.style.cursor = "not-allowed";
         btnPaper.disabled = true;
+        btnPaper.style.cursor = "not-allowed";
         btnScissors.disabled = true;
+        btnScissors.style.cursor = "not-allowed";
     }
     // console.log(winner.textContent)
 }
@@ -178,11 +185,14 @@ const btnNewGame = document.querySelector(".btn-newgame");
 btnNewGame.addEventListener("click", newGame);
 
 function newGame() {
-    alert("Let's play!");
+    showAlert();
 
     btnRock.disabled = false;
+    btnRock.style.cursor = "pointer";
     btnPaper.disabled = false;
+    btnPaper.style.cursor = "pointer";
     btnScissors.disabled = false;
+    btnScissors.style.cursor = "pointer";
 
     winner.textContent = "";
 
@@ -205,10 +215,24 @@ function newGame() {
     if (currentImg !== null) {
         currentImg.remove()
     }
+   
+}
 
-    
-    
-    
+document.addEventListener("DOMContentLoaded", showAlert)
+function showAlert() {
+    const overlay = document.querySelector(".overlay");
+    const alertBox = document.querySelector(".alert-box");
+    const closeButton = document.querySelector(".btn-close");
+    const alertMessage = document.querySelector(".alert-message")
+
+    // alertMessage.textContent = "Let's play!"
+    alertBox.style.display = "block"
+    overlay.style.display = "block"
+
+    closeButton.addEventListener('click', () => {
+        alertBox.style.display = "none"
+        overlay.style.display = "none";
+    })
 }
 
 
