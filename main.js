@@ -16,6 +16,7 @@ const playerPoints = document.querySelector(".player-points");
 const computerPoints = document.querySelector(".computer-points");
 const winner = document.querySelector(".winner");
 
+// Function to show an alert dialog with rules.
 function showAlertDialog() {
     const closeButton = document.querySelector(".btn-close");
 
@@ -25,14 +26,17 @@ function showAlertDialog() {
     closeButton.addEventListener("click", hideAlertDialog);
 }
 
+// Function to hide the alert dialog.
 function hideAlertDialog() {
     alertBox.style.display = "none";
     alertOverlay.style.display = "none";
 }
 
+// Show the alert dialog on page load.
 document.addEventListener("DOMContentLoaded", showAlertDialog);
 
-// Returns human choice based on the event target's id.
+
+//Returns the human choice based on the event target's id.
 function getHumanChoice(event) {
     const validChoices = ["rock", "paper", "scissors"];
     if (validChoices.includes(event.target.id)) {
@@ -40,11 +44,11 @@ function getHumanChoice(event) {
     }
 }
 
-// Function to display human pick after user makes choice.
+// Displays the human choice.
 function displayHumanChoice(humanChoice) {
     const playerPickDiv = document.querySelector(".player-pick");
     const currentImage = playerPickDiv.querySelector("img");
-
+    // Remove previous image if it exists
     if (currentImage) {
         currentImage.remove();
     }
@@ -65,12 +69,15 @@ function displayHumanChoice(humanChoice) {
     playerPickDiv.appendChild(image);
 }
 
+// Generates a random choice of rock, paper, or scissors.
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
+// Displays the computer choice.
 function displayComputerChoice(computerChoice) {
+    // Remove previous image if it exists
     const currentImage = document.getElementById("computer-pick");
     if (currentImage) {
         currentImage.remove();
@@ -93,11 +100,14 @@ function displayComputerChoice(computerChoice) {
     computerPick.appendChild(image);
 }
 
+// Function to play a round of rock-paper-scissors.
 function playRound(humanChoice, computerChoice) {
+    // Human and computer choose same shape.
     if (humanChoice === computerChoice) {
         playerPoints.textContent = humanScore;
         computerPoints.textContent = computerScore;
     } else if (
+        // Computer beats human.
         (humanChoice === "rock" && computerChoice === "paper") ||
         (humanChoice === "paper" && computerChoice === "scissors") ||
         (humanChoice === "scissors" && computerChoice === "rock")
@@ -106,6 +116,7 @@ function playRound(humanChoice, computerChoice) {
         playerPoints.textContent = humanScore;
         computerPoints.textContent = computerScore;
     } else if (
+        // Human beats computer.
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
@@ -116,16 +127,18 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-// Function to determine the winner of five rounds of rock-paper-scissors.
+// Function to play a game of rock-paper-scissors.
 function playGame() {
     if (humanScore === 5) {
         winner.textContent = "Congrats, you won!";
+        // Disable all buttons so the player can't play anymore.
         imageButtons.forEach((button) => {
             button.disabled = true;
             button.style.cursor = "not-allowed";
         });
     } else if (computerScore === 5) {
         winner.textContent = "Sorry, you lost.";
+        // Disable all buttons so the player can't play anymore.
         imageButtons.forEach((button) => {
             button.disabled = true;
             button.style.cursor = "not-allowed";
@@ -133,6 +146,7 @@ function playGame() {
     }
 }
 
+// Click event listener to play the game.
 buttons.addEventListener("click", (event) => {
     const humanChoice = getHumanChoice(event);
     displayHumanChoice(humanChoice);
@@ -142,23 +156,25 @@ buttons.addEventListener("click", (event) => {
     playGame();
 });
 
+// Function to start a new game.
 function newGame() {
-    imageButtons.forEach(button => {
+    // Enable all buttons so the player can play again.
+    imageButtons.forEach((button) => {
         button.disabled = false;
         button.style.cursor = "pointer";
     });
 
     winner.textContent = "";
-
+    // Reset scores.
     humanScore = 0;
     computerScore = 0;
 
     playerPoints.textContent = humanScore;
     computerPoints.textContent = computerScore;
-
+    // Remove previous image if it exists
     const computerPick = document.getElementById("computer-pick");
     const playerPick = document.getElementById("player-pick");
-    
+
     if (computerPick) {
         computerPick.remove();
     }
@@ -167,6 +183,7 @@ function newGame() {
     }
 }
 
+// Event listener to start a new game.
 btnNewGame.addEventListener("click", () => {
     showAlertDialog();
     newGame();
