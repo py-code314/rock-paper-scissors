@@ -14,15 +14,21 @@ Rock-paper-scissors is a simple hand game usually played between two people, whe
 * Rock crushes Scissors (Rock wins).
 * Scissors cuts Paper (Scissors win).
 * Paper covers Rock (Paper wins)
-* If both players choose the same shape, the game is a tie.
+* If both players choose the same shape, the round is a tie.
   
 
 ### Scoring
-You or the computer gets 1 point depending on who wins that particular round. There are a total of 5 rounds and winner is decided by the final score. Final result can be one of these three scenarios:
+You or the computer gets 1 point depending on who wins that round. Whoever reaches 5 points first wins. You either win or lose and there are no ties in this particular scenario.
 
-1. Tie
-2. You won!
-3. You lost!
+
+### How to play
+* Click on ✖︎ to close the Rules pop-up box.
+* Click an image in PLAYER section on left-hand side to start the game.
+* For each round, you can see your choice and computer's choice in the big boxes below the images.
+* You can also see the current score in real time after each round below the big boxes.
+* At the bottom of page it shows your winner or loser status once the game is over.
+* If you wish, you can play the game any number of times by clicking NEW GAME button at top of the page.
+* All the best! 😎
 
 
 
