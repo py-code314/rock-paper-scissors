@@ -1,144 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+/* Font styles */
+@import url("https://fonts.googleapis.com/css2?family=Honk&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
 
 /* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Playwrite GB S", cursive;
-    
 }
 
-/* Style title */
+/* Style body */
+body {
+    background-image: linear-gradient(
+        145deg,
+        hsl(200deg 100% 50%) 0%,
+        hsl(186deg 100% 46%) 39%,
+        hsl(145deg 78% 55%) 61%,
+        hsl(52deg 100% 50%) 100%
+    );
+    padding: 0 10px;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Playwrite GB S", cursive;
+}
+
+/* Style titles */
 .page-title {
     text-align: center;
     font-family: "Honk", system-ui;
-    font-size: 3.5rem;
+    font-size: 3.7rem;
 }
 
-.subsection-title {
+.heading {
     text-align: center;
     font-family: "Bungee Spice", sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    padding: 5px;
 }
 
-.image-title {
-    text-align: center;
-}
-
-/* Style cards section */
-.choices {
-    border: 2px solid black;
-    display: flex;
-    justify-content: space-around;
-}
-
-.player-choices {
-    border: 2px solid black;
-    width: 500px;
-    height: 200px;
-}
-
-.computer-choices {
-    border: 2px solid black;
-    width: 500px;
-    height: 200px;
-}
-
-.buttons, .images {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.player-choice button {
-    border: none;
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-}
-
-
-.computer-choice {
-    width: 100px;
-    height: 100px;
-}
-.image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-/* Style play section */
-.current-round {
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-}
-
-.player-pick, .computer-pick{
-    border: 2px solid black;
-    width: 350px;
-    height: 350px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-}
-
-.versus {
-    border: 2px solid black;
-    width: 200px;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-}
-
-
-
-
-
-/* Style score section */
-.score {
-    border: 2px solid black;
-    width: 600px;
-    margin: 0 auto;
-}
-
-.points {
-    border: 2px solid black;
-    width: 600px;
-    height: 70px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 2.5rem;
-}
-
-/* Style winner section */
-.winner {
-    border: 2px solid black;
-    /* display: flex;
-    justify-content: center; */
-    width: 600px;
-    height: 70px;
-    margin: 0 auto;
-}
-
-/* Style new game section */
+/* Style new game button section */
 .new-game {
-    /* font-family: "Bungee Spice", sans-serif; */
     width: 600px;
     height: 70px;
-    border: 2px solid black;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
 }
 
 .btn-newgame {
@@ -147,5 +55,159 @@
     padding: 5px 10px;
     background-color: #fff;
     border-radius: 5px;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
 }
 
+.btn-newgame:hover {
+    font-size: 2rem;
+}
+
+/* Overlay and alert box styling */
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+
+.alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e3ec28;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+    z-index: 99;
+}
+
+.alert-message {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.rules {
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+.btn-close {
+    float: right;
+    font-weight: 800;
+    font-size: 2.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Style choices section */
+.choices,
+.btns-player,
+.images {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.choices {
+    position: relative;
+}
+
+.player-choices,
+.computer-choices {
+    width: 400px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+.btn-player {
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+
+.btn-player:hover {
+    box-shadow: 0 0 10px 5px rgb(242, 242, 11, 0.7);
+}
+
+.vertical-line {
+    border-left: 1px solid #000;
+    height: 100px;
+    position: absolute;
+    top: 55px;
+}
+
+.computer-choice {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Style current round section */
+.current-round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-pick,
+.computer-pick {
+    border: 1px solid black;
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.versus {
+    width: 150px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+}
+
+/* Style score section */
+.score {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.score h2 {
+    font-size: 2.5rem;
+}
+
+.points {
+    width: 600px;
+    /* height: 60px; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+/* Style winner section */
+.winner {
+    width: 600px;
+    height: 70px;
+    margin: auto;
+}
