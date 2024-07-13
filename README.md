@@ -29,6 +29,10 @@ You or the computer gets 1 point depending on who wins that round. Whoever reach
 * At the bottom of page it shows your winner or loser status once the game is over.
 * If you wish, you can play the game any number of times by clicking NEW GAME button at top of the page.
 * All the best! 😎
+  
+
+## Screenshots
+![Screenshot the finished game](./images/game-screenshot.png)
 
 
 ## **_Image Sources_**
